@@ -1,5 +1,5 @@
 <?php
-namespace Everyman\Plumber;
+namespace Plumber;
 
 use RuntimeException,
     ReflectionClass;
@@ -12,7 +12,7 @@ class Helper
 	protected static $refl = array();
 	protected static $classRegistry = array();
 	protected static $namespaceRegistry = array(
-		'Everyman\Plumber\Pipe\\' => 'Pipe',
+		'Plumber\Pipe\\' => 'Pipe',
 	);
 
 	/**
@@ -23,7 +23,7 @@ class Helper
 		self::$refl = array();
 		self::$classRegistry = array();
 		self::$namespaceRegistry = array(
-			'Everyman\Plumber\Pipe\\' => 'Pipe',
+			'Plumber\Pipe\\' => 'Pipe',
 		);
 	}
 

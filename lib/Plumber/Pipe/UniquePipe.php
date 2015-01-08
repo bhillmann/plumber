@@ -1,7 +1,7 @@
 <?php
-namespace Everyman\Plumber\Pipe;
+namespace Plumber\Pipe;
 
-use Everyman\Plumber\Pipe\FilterPipe;
+use Plumber\Pipe\FilterPipe;
 
 /**
  * Pipe that returns only elements that have not yet been processed

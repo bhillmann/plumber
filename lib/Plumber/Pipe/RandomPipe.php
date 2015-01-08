@@ -1,7 +1,7 @@
 <?php
-namespace Everyman\Plumber\Pipe;
+namespace Plumber\Pipe;
 
-use Everyman\Plumber\Pipe\FilterPipe;
+use Plumber\Pipe\FilterPipe;
 
 /**
  * Pipe that only returns an element if a randomly chosen value is greater than

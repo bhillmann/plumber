@@ -1,9 +1,9 @@
 <?php
-namespace Everyman\Plumber;
+namespace Plumber;
 
-use Everyman\Plumber\Pipe,
-    Everyman\Plumber\Helper,
-    Everyman\Plumber\Pipe\TransformPipe,
+use Plumber\Pipe,
+    Plumber\Helper,
+    Plumber\Pipe\TransformPipe,
     Iterator;
 
 /**

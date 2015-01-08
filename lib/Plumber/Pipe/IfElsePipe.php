@@ -1,7 +1,7 @@
 <?php
-namespace Everyman\Plumber\Pipe;
+namespace Plumber\Pipe;
 
-use Everyman\Plumber\Pipe\TransformPipe,
+use Plumber\Pipe\TransformPipe,
     InvalidArgumentException;
 
 /**

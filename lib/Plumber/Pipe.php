@@ -1,5 +1,5 @@
 <?php
-namespace Everyman\Plumber;
+namespace Plumber;
 
 use Iterator,
     ArrayIterator;
