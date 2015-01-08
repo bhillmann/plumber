@@ -1,7 +1,6 @@
 Plumber
 =======
-
-**Version 0.0.1**
+**Version 1.0.0**
 
 Library for easily creating processing chains.
 
