@@ -11,37 +11,37 @@ use Plumber\Pipe\TransformPipe,
  */
 class IfElsePipe extends TransformPipe
 {
-	protected $if;
-	protected $then;
-	protected $else;
+    protected $if;
+    protected $then;
+    protected $else;
 
-	public function __construct($if, $then, $else=null)
-	{
-		if (!$else) {
-			$else = array($this, 'defaultElse');
-		}
+    public function __construct($if, $then, $else = null)
+    {
+        if (!$else) {
+            $else = array($this, 'defaultElse');
+        }
 
-		if (!is_callable($if) || !is_callable($then) || !is_callable($else)) {
-			throw new InvalidArgumentException('IfElsePipe must be given callable arguments.');
-		}
+        if (!is_callable($if) || !is_callable($then) || !is_callable($else)) {
+            throw new InvalidArgumentException('IfElsePipe must be given callable arguments.');
+        }
 
-		$this->if = $if;
-		$this->then = $then;
-		$this->else = $else;
+        $this->if = $if;
+        $this->then = $then;
+        $this->else = $else;
 
-		parent::__construct(array($this, 'ifElse'));
-	}
+        parent::__construct(array($this, 'ifElse'));
+    }
 
-	public function ifElse($value, $key)
-	{
-		if (call_user_func($this->if, $value, $key)) {
-			return call_user_func($this->then, $value, $key);
-		}
-		return call_user_func($this->else, $value, $key);
-	}
+    public function ifElse($value, $key)
+    {
+        if (call_user_func($this->if, $value, $key)) {
+            return call_user_func($this->then, $value, $key);
+        }
+        return call_user_func($this->else, $value, $key);
+    }
 
-	public function defaultElse($value, $key)
-	{
-		return $value;
-	}
+    public function defaultElse($value, $key)
+    {
+        return $value;
+    }
 }

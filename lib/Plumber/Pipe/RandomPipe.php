@@ -9,26 +9,26 @@ use Plumber\Pipe\FilterPipe;
  */
 class RandomPipe extends FilterPipe
 {
-	protected $threshold;
-	protected $random;
+    protected $threshold;
+    protected $random;
 
-	public function __construct($threshold, $random=null)
-	{
-		if (!$random) {
-			$random = function () {
-				return mt_rand(0,99);
-			};
-		}
+    public function __construct($threshold, $random = null)
+    {
+        if (!$random) {
+            $random = function () {
+                return mt_rand(0, 99);
+            };
+        }
 
-		$this->threshold = $threshold;
-		$this->random = $random;
+        $this->threshold = $threshold;
+        $this->random = $random;
 
-		parent::__construct(array($this, 'random'));
-	}
+        parent::__construct(array($this, 'random'));
+    }
 
-	public function random($value, $key)
-	{
-		$random = call_user_func($this->random);
-		return $random < $this->threshold;
-	}
+    public function random($value, $key)
+    {
+        $random = call_user_func($this->random);
+        return $random < $this->threshold;
+    }
 }

@@ -8,24 +8,24 @@ use Plumber\Pipe\FilterPipe;
  */
 class UniquePipe extends FilterPipe
 {
-	protected $seen = array();
+    protected $seen = array();
 
-	public function __construct()
-	{
-		parent::__construct(array($this, 'unique'));
-	}
+    public function __construct()
+    {
+        parent::__construct(array($this, 'unique'));
+    }
 
-	public function unique($value, $key)
-	{
-		if (in_array($value, $this->seen)) {
-			return false;
-		}
-		$this->seen[] = $value;
-		return true;
-	}
+    public function unique($value, $key)
+    {
+        if (in_array($value, $this->seen)) {
+            return false;
+        }
+        $this->seen[] = $value;
+        return true;
+    }
 
-	protected function reset()
-	{
-		$this->seen = array();
-	}
+    protected function reset()
+    {
+        $this->seen = array();
+    }
 }

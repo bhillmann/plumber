@@ -9,34 +9,34 @@ use Plumber\Pipe\FilterPipe;
  */
 class SlicePipe extends FilterPipe
 {
-	protected $offset;
-	protected $length;
-	protected $at = 0;
-	protected $emitted = 0;
+    protected $offset;
+    protected $length;
+    protected $at = 0;
+    protected $emitted = 0;
 
-	public function __construct($offset=null, $length=null)
-	{
-		$this->offset = $offset;
-		$this->length = $length;
+    public function __construct($offset = null, $length = null)
+    {
+        $this->offset = $offset;
+        $this->length = $length;
 
-		parent::__construct(array($this, 'slice'));
-	}
+        parent::__construct(array($this, 'slice'));
+    }
 
-	public function slice($value, $key)
-	{
-		$this->at++;
-		$pastOffset = ($this->offset === null || $this->offset < $this->at);
-		$beforeLength = ($this->length === null || $this->emitted < $this->length);
-		if ($pastOffset && $beforeLength) {
-			$this->emitted++;
-			return true;
-		}
-		return false;
-	}
+    public function slice($value, $key)
+    {
+        $this->at++;
+        $pastOffset = ($this->offset === null || $this->offset < $this->at);
+        $beforeLength = ($this->length === null || $this->emitted < $this->length);
+        if ($pastOffset && $beforeLength) {
+            $this->emitted++;
+            return true;
+        }
+        return false;
+    }
 
-	protected function reset()
-	{
-		$this->at = 0;
-		$this->emitted = 0;
-	}
+    protected function reset()
+    {
+        $this->at = 0;
+        $this->emitted = 0;
+    }
 }
