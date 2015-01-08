@@ -1,10 +1,13 @@
 Plumber
 =======
+
+**Version 0.0.1**
+
 Library for easily creating processing chains.
 
 Inspired and influenced by [TinkerPop Pipes](http://pipes.tinkerpop.com)
 
-Author: Josh Adell <josh.adell@gmail.com>  
+Author: Josh Adell <josh.adell@gmail.com>
 Copyright (c) 2011-2012
 
 [![Build Status](https://secure.travis-ci.org/jadell/plumber.png?branch=master)](http://travis-ci.org/jadell/plumber)
