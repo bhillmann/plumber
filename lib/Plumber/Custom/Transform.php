@@ -13,7 +13,7 @@ use Plumber\Pipe\TransformPipe;
 abstract class Transform extends TransformPipe {
 
     public function __construct() {
-        parent::__construct($this ,'transform');
+        parent::__construct(array($this ,'transform'));
     }
 
     public function transform() {
