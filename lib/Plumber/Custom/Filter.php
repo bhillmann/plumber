@@ -6,7 +6,7 @@
  * Time: 09:30
  */
 
-namespace Plumber\Pipe\Filter;
+namespace Plumber\Custom;
 
 use Plumber\Pipe\FilterPipe;
 

@@ -6,7 +6,7 @@
  * Time: 09:25
  */
 
-namespace Plumber\Pipe\Transform;
+namespace Plumber\Custom;
 
 use Plumber\Pipe\TransformPipe;
 
