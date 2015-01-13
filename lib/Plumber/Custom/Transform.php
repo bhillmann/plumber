@@ -8,15 +8,13 @@
 
 namespace Plumber\Custom;
 
-use Plumber\Pipe\TransformPipe;
+abstract class Transform {
 
-abstract class Transform extends TransformPipe {
-
-    public function __construct() {
-        parent::__construct(array($this ,'transform'));
+    public function __invoke($value) {
+        return $this->apply($value);
     }
 
-    public function transform() {
+    public function apply($value) {
         throw new \Exception("Child class must implement the transform function");
     }
 }
