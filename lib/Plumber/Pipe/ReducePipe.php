@@ -22,4 +22,8 @@ class ReducePipe extends Pipe {
         }
         return $this->reduced;
     }
+
+    public function key() {
+        return 0;
+    }
 }
